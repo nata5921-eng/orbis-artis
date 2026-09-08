@@ -4,119 +4,105 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Orbis Artis Weekly</title>
-<meta name="description" content="One spotlight a week — art, music and architecture worth the trip. Verified dates, real closing windows.">
+<meta name="description" content="One spotlight a week — art, music and architecture worth the trip.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap">
 <style>
-  :root{--ink:#15171B;--paper:#F4F0E6;--blue:#1436C9;--amber:#E8B45A;--pink:#E0AAC3;--mut:rgba(244,240,230,.55)}
+  :root{--ink:#15171B;--paper:#F4F0E6;--blue:#1436C9;--amber:#E8B45A;--mut:rgba(244,240,230,.55)}
   body{background:var(--ink);color:var(--paper);font-family:'Avenir Next','Helvetica Neue',system-ui,sans-serif;
     margin:0;min-height:100vh;word-break:keep-all}
-  .wrap{max-width:640px;margin:0 auto;padding:48px 22px 64px}
+  .wrap{max-width:640px;margin:0 auto;padding:44px 20px 60px}
   .wm{font-size:13px;letter-spacing:.28em;font-weight:600;color:var(--mut)}
-  h1{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(1.9rem,6vw,2.6rem);
-    margin:.4em 0 .2em;text-wrap:balance;line-height:1.15}
-  .sub{color:var(--mut);font-size:14.5px;margin-bottom:34px}
-  .sec{font-size:11.5px;letter-spacing:.24em;font-weight:700;color:var(--amber);margin:30px 0 12px}
-  a.card{display:block;text-decoration:none;color:var(--paper);border:1px solid rgba(244,240,230,.16);
-    border-radius:10px;padding:18px 20px;margin-bottom:14px;transition:border-color .15s,transform .15s}
-  a.card:hover{border-color:var(--amber);transform:translateY(-1px)}
-  a.card:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
-  .spot{border-color:var(--amber);background:linear-gradient(160deg,rgba(20,54,201,.28),rgba(20,54,201,.06))}
-  .t{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;line-height:1.25;margin:0 0 7px;text-wrap:balance}
-  .spot .t{font-size:1.55rem}
-  .why{font-size:14px;line-height:1.55;color:rgba(244,240,230,.82);margin:0 0 8px;text-wrap:pretty}
-  .m{font-size:13px;color:var(--mut)}
-  .row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;margin-top:10px}
-  .chip{font-size:12px;font-weight:700;letter-spacing:.1em;background:var(--blue);color:var(--paper);
-    padding:6px 12px;border-radius:5px;white-space:nowrap;font-variant-numeric:tabular-nums}
-  .chip.soon{background:var(--amber);color:var(--ink)}
-  .go{font-size:12px;letter-spacing:.08em;color:var(--amber);font-weight:600}
-  .about{border-top:1px solid rgba(244,240,230,.14);margin-top:38px;padding-top:22px}
+  h1{font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(1.8rem,5.6vw,2.4rem);
+    margin:.4em 0 1em;text-wrap:balance;line-height:1.15}
+  a.hero{display:block;position:relative;border-radius:14px;overflow:hidden;text-decoration:none;
+    color:var(--paper);margin-bottom:26px;border:1px solid rgba(232,180,90,.5)}
+  .hero img{display:block;width:100%;height:min(78vh,560px);object-fit:cover;object-position:50% 38%}
+  .hero .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,15,20,.30),
+    rgba(13,15,20,.02) 40%,rgba(13,15,20,.88) 80%)}
+  .hero .txt{position:absolute;left:22px;right:22px;bottom:20px}
+  .hero .t{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.5rem,5vw,2rem);line-height:1.15;
+    margin:0 0 8px;text-wrap:balance}
+  .hero .l{font-size:14.5px;color:rgba(244,240,230,.85);margin:0 0 12px;text-wrap:pretty}
+  .chip{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;background:var(--amber);
+    color:var(--ink);padding:7px 13px;border-radius:5px;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .credit{position:absolute;right:14px;top:12px;font-size:10.5px;color:rgba(244,240,230,.55)}
+  a.row{display:flex;align-items:center;gap:16px;text-decoration:none;color:var(--paper);
+    padding:12px 4px;border-bottom:1px solid rgba(244,240,230,.13);transition:background .15s}
+  a.row:hover{background:rgba(244,240,230,.05)}
+  a.row:last-of-type{border-bottom:none}
+  .row img{width:78px;height:78px;object-fit:cover;border-radius:8px;flex:none}
+  .row .tx{flex:1;min-width:0}
+  .row .t{font-weight:600;font-size:15.5px;line-height:1.3;margin:0 0 3px}
+  .row .m{font-size:12.5px;color:var(--mut)}
+  .row .d{font-size:12px;font-weight:700;letter-spacing:.08em;white-space:nowrap;
+    color:rgba(244,240,230,.8);font-variant-numeric:tabular-nums}
+  .row .d.soon{color:var(--amber)}
+  .foot{margin-top:36px}
   .promise{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.05rem;
-    color:var(--mut);margin:0 0 12px;text-wrap:balance}
-  .about p{font-size:13.5px;line-height:1.6;color:var(--mut);margin:0 0 10px}
+    color:var(--mut);margin:0 0 14px;text-wrap:balance}
   a.ig{color:var(--amber);text-decoration:none;font-weight:600;letter-spacing:.14em;font-size:13px}
-  .note{font-size:11.5px;color:rgba(244,240,230,.4);margin-top:18px;line-height:1.6}
+  .note{font-size:11px;color:rgba(244,240,230,.35);margin-top:20px;line-height:1.6}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="wm">ORBIS ARTIS · THIS WEEK</div>
-  <h1>Venice, in minor keys — and five more doors</h1>
-  <div class="sub">Week of September 7, 2026 · every date verified · tap any card for the official page</div>
+  <div class="wm">ORBIS ARTIS</div>
+  <h1>This week: Venice, in minor keys.</h1>
 
-  <div class="sec">THE SPOTLIGHT</div>
-  <a class="card spot" href="https://www.labiennale.org/en/art/2026" target="_blank" rel="noopener">
-    <div class="t">61st Venice Biennale: In Minor Keys</div>
-    <p class="why">The edition Koyo Kouoh did not live to see opened. 110 artists carry her "In Minor Keys"
-      across the Giardini, the Arsenale and Forte Marghera — quieter frequencies, held in some of the most
-      charged rooms in the art world this year.</p>
-    <div class="m">Venice, Italy · Giardini &amp; Arsenale</div>
-    <div class="row"><span class="m">May 9 — Nov 22, 2026</span><span class="chip" data-end="2026-11-22">CLOSES NOV 22</span></div>
-    <div class="row"><span class="go">OFFICIAL SITE →</span></div>
+  <a class="hero" href="https://www.labiennale.org/en/art/2026" target="_blank" rel="noopener">
+    <img src="img/venice.jpg" alt="Installation view at the 61st Venice Biennale">
+    <div class="scrim"></div>
+    <div class="credit">61st Venice Biennale · via e-flux</div>
+    <div class="txt">
+      <div class="t">61st Venice Biennale — In Minor Keys</div>
+      <p class="l">Koyo Kouoh's posthumous edition. 110 artists across the Giardini&nbsp;and&nbsp;Arsenale.</p>
+      <span class="chip" data-end="2026-11-22">UNTIL NOV 22</span>
+    </div>
   </a>
 
-  <div class="sec">ALSO ON THE RADAR</div>
-
-  <a class="card" href="https://www.gwangjubiennale.org/en/index.do" target="_blank" rel="noopener">
-    <div class="t">16th Gwangju Biennale: You Must Change Your Life</div>
-    <p class="why">Director Ho Tzu Nyen takes his title from Rilke's command. Inside, volcanic lava from Jeju
-      stands as sculpture; a ten-hour video called Apologies plays building-size&nbsp;on&nbsp;the&nbsp;facade.</p>
-    <div class="m">Gwangju, Korea · Biennale Hall &amp; citywide · 111 Biennale-ro, Buk-gu</div>
-    <div class="row"><span class="m">Sep 5 — Nov 15, 2026</span><span class="chip" data-end="2026-11-15">CLOSES NOV 15</span></div>
-    <div class="row"><span class="go">OFFICIAL SITE →</span></div>
+  <a class="row" href="https://www.gwangjubiennale.org/en/index.do" target="_blank" rel="noopener">
+    <img src="img/gwangju.jpg" alt="Gwangju Biennale gallery view">
+    <div class="tx"><div class="t">16th Gwangju Biennale</div><div class="m">Gwangju · You Must Change Your Life</div></div>
+    <div class="d" data-end="2026-11-15">NOV 15</div>
   </a>
 
-  <a class="card" href="https://www.e-flux.com/announcements/6787772/dissident-chorus-participating-artists" target="_blank" rel="noopener">
-    <div class="t">Busan Biennale 2026: Dissident Chorus</div>
-    <p class="why">Sound as a language of resistance in a port city shaped by movement and labour —
-      46 artists and collectives from 22 countries across three venues, including a former high&nbsp;school&nbsp;in&nbsp;Yeongdo.</p>
-    <div class="m">Busan, Korea · Museum of Contemporary Art Busan · Space OneZ · Former Busan Nam High School</div>
-    <div class="row"><span class="m">Aug 29 — Nov 1, 2026</span><span class="chip" data-end="2026-11-01">CLOSES NOV 1</span></div>
-    <div class="row"><span class="go">PROGRAMME &amp; ARTISTS →</span></div>
+  <a class="row" href="https://www.e-flux.com/announcements/6787772/dissident-chorus-participating-artists" target="_blank" rel="noopener">
+    <img src="img/busan.jpg" alt="Aerial view of Yeongdo, Busan">
+    <div class="tx"><div class="t">Busan Biennale 2026</div><div class="m">Busan · Dissident Chorus</div></div>
+    <div class="d" data-end="2026-11-01">NOV 1</div>
   </a>
 
-  <a class="card" href="https://www.leeum.org/" target="_blank" rel="noopener">
-    <div class="t">Idea Museum, After Tomorrow</div>
-    <p class="why">Leeum gathers three years of its Idea Museum dialogues into one exhibition asking what
-      a museum should become — the Seoul stop if the biennales bring you to Korea.</p>
-    <div class="m">Seoul, Korea · Leeum Museum of Art</div>
-    <div class="row"><span class="m">Sep 5 — Nov 29, 2026</span><span class="chip" data-end="2026-11-29">CLOSES NOV 29</span></div>
-    <div class="row"><span class="go">OFFICIAL SITE →</span></div>
+  <a class="row" href="https://www.leeum.org/" target="_blank" rel="noopener">
+    <img src="img/leeum.jpg" alt="Idea Museum screening room at Leeum">
+    <div class="tx"><div class="t">Idea Museum, After Tomorrow</div><div class="m">Seoul · Leeum Museum of Art</div></div>
+    <div class="d" data-end="2026-11-29">NOV 29</div>
   </a>
 
-  <a class="card" href="https://www.contemporaryartdaily.com/project/adam-pendleton-at-langen-foundation-dusseldorf-75734" target="_blank" rel="noopener">
-    <div class="t">Adam Pendleton at Langen Foundation</div>
-    <p class="why">The closing days of Pendleton's summer-long exhibition outside Düsseldorf —
-      the shortest window on this list.</p>
-    <div class="m">Neuss, Germany · Langen Foundation</div>
-    <div class="row"><span class="m">Until Sep 20, 2026</span><span class="chip soon" data-end="2026-09-20">CLOSES SEP 20</span></div>
-    <div class="row"><span class="go">INSTALLATION VIEWS →</span></div>
+  <a class="row" href="https://www.contemporaryartdaily.com/project/adam-pendleton-at-langen-foundation-dusseldorf-75734" target="_blank" rel="noopener">
+    <img src="img/langen.jpg" alt="Adam Pendleton video installation">
+    <div class="tx"><div class="t">Adam Pendleton</div><div class="m">Neuss · Langen Foundation</div></div>
+    <div class="d soon" data-end="2026-09-20">SEP 20</div>
   </a>
 
-  <a class="card" href="https://www.artdaily.com/index.asp?int_sec=11&int_new=199951" target="_blank" rel="noopener">
-    <div class="t">Stolen Childhoods</div>
-    <p class="why">Canada's longest-running Indian Residential School, told by its survivors — over 140 years
-      of Mohawk Institute records, developed by the Survivors' Secretariat. Three weeks only.</p>
-    <div class="m">Toronto, Canada · Royal Ontario Museum</div>
-    <div class="row"><span class="m">Sep 8 — Oct 1, 2026</span><span class="chip" data-end="2026-10-01">CLOSES OCT 1</span></div>
-    <div class="row"><span class="go">EXHIBITION DETAILS →</span></div>
+  <a class="row" href="https://www.artdaily.com/index.asp?int_sec=11&int_new=199951" target="_blank" rel="noopener">
+    <img src="img/rom.jpg" alt="Archival photograph, Mohawk Institute">
+    <div class="tx"><div class="t">Stolen Childhoods</div><div class="m">Toronto · Royal Ontario Museum</div></div>
+    <div class="d" data-end="2026-10-01">OCT 1</div>
   </a>
 
-  <div class="about">
-    <div class="promise">Everything here can still be seen in person. Soon it can't.</div>
-    <p>Orbis Artis is a weekly selection of art, music and architecture worth traveling for —
-      one spotlight, a short radar, every date verified against the institutions' own announcements.</p>
-    <a class="ig" href="https://www.instagram.com/orbis.artis/" target="_blank" rel="noopener">@ORBIS.ARTIS ON INSTAGRAM →</a>
-    <div class="note">Updated weekly. Dates as published at time of posting — check the official page before you travel.</div>
+  <div class="foot">
+    <p class="promise">Everything here can still be seen in person. Soon it can't.</p>
+    <a class="ig" href="https://www.instagram.com/orbis.artis/" target="_blank" rel="noopener">@ORBIS.ARTIS →</a>
+    <div class="note">Images courtesy of the institutions. New doors every Thursday.</div>
   </div>
 </div>
 <script>
   try{
     var now=new Date();
-    document.querySelectorAll('.chip[data-end]').forEach(function(c){
+    document.querySelectorAll('[data-end]').forEach(function(c){
       var d=Math.ceil((new Date(c.dataset.end+'T23:59:59')-now)/86400000);
-      if(d>0){c.textContent=c.textContent+' · '+d+' DAYS';}
-      else{c.textContent='CLOSED';c.style.background='rgba(244,240,230,.25)';c.style.color='var(--paper)';}
+      if(d>0&&d<=60){c.textContent=c.textContent.replace(/^(UNTIL )?/, '$1')+' · '+d+'D';}
+      if(d<=0){c.textContent='CLOSED';}
     });
   }catch(e){}
 </script>
